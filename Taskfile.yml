@@ -18,7 +18,7 @@ tasks:
 
   lint:
     desc: Lint code.
-    cmd: black -l {{.LINE_LENGTH}} .
+    cmd: black -q -l {{.LINE_LENGTH}} .
 
   test:
     desc: Run unit tests.
@@ -31,6 +31,6 @@ tasks:
 
   watch:
     desc: Run test watcher.
-    cmd: ptw --onpass "task lint" -- --mypy
+    cmd: ptw --beforerun "task lint" -- --mypy
     interactive: true
 
