@@ -25,6 +25,10 @@ tasks:
     cmds:
       - pytest --mypy .
 
+  upgrade:
+    desc: Upgrade requirements.
+    cmd: pip install --upgrade -r requirements.in
+
   watch:
     desc: Run test watcher.
     cmd: ptw --onpass "task lint" -- --mypy
