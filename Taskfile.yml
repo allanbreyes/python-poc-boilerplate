@@ -14,7 +14,7 @@ tasks:
 
   freeze:
     desc: Freeze requirements.
-    cmd: pip freeze > requirements.txt
+    cmd: pip freeze --all > requirements.txt
 
   lint:
     desc: Lint code.
