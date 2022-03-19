@@ -14,5 +14,6 @@ Requirements:
 Getting started:
 - Run `nix-shell`.
 - Run `task` to start the test runner (or check `Taskfile.yml` for other tasks).
+- Or, if you have `task` installed locally, just run `task up`.
 
 [nix]: https://nixos.org
