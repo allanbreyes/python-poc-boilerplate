@@ -8,6 +8,10 @@ tasks:
   default:
     - task: watch
 
+  up:
+    desc: Runs nix-shell and task runner. Assumes taskfile installed locally.
+    cmd: nix-shell --run "task"
+
   freeze:
     desc: Freeze requirements.
     cmd: pip freeze > requirements.txt
