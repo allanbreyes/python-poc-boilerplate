@@ -10,15 +10,18 @@ tasks:
 
   up:
     desc: Runs nix-shell and task runner. Assumes taskfile installed locally.
-    cmd: nix-shell --run "task"
+    cmds:
+      - nix-shell --run "task"
 
   freeze:
     desc: Freeze requirements.
-    cmd: pip freeze --all > requirements.txt
+    cmds:
+      - pip freeze --all > requirements.txt
 
   lint:
     desc: Lint code.
-    cmd: black -q -l {{.LINE_LENGTH}} .
+    cmds:
+      - black -q -l {{.LINE_LENGTH}} .
 
   test:
     desc: Run unit tests.
@@ -27,10 +30,11 @@ tasks:
 
   upgrade:
     desc: Upgrade requirements.
-    cmd: pip install --upgrade -r requirements.in
+    cmds:
+      - pip install --upgrade -r requirements.in
 
   watch:
     desc: Run test watcher.
-    cmd: ptw --beforerun "task lint" -- --mypy
+    cmds:
+      - ptw --beforerun "task lint" -- --mypy
     interactive: true
-
