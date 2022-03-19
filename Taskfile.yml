@@ -1,0 +1,28 @@
+---
+version: "3"
+
+vars:
+  LINE_LENGTH: 80
+
+tasks:
+  default:
+    - task: watch
+
+  freeze:
+    desc: Freeze requirements.
+    cmd: pip freeze > requirements.txt
+
+  lint:
+    desc: Lint code.
+    cmd: black -l {{.LINE_LENGTH}} .
+
+  test:
+    desc: Run unit tests.
+    cmds:
+      - pytest --mypy .
+
+  watch:
+    desc: Run test watcher.
+    cmd: ptw --onpass "task lint" -- --mypy
+    interactive: true
+
