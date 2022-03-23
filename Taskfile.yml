@@ -36,5 +36,5 @@ tasks:
   watch:
     desc: Run test watcher.
     cmds:
-      - ptw --beforerun "task lint" -- --mypy
+      - ptw -- --mypy
     interactive: true
