@@ -1,6 +1,6 @@
 import pytest
 
-from lib import *
+from lib import Thing
 
 
 @pytest.fixture
